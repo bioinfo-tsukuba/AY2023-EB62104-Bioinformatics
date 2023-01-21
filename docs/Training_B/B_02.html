@@ -3,7 +3,7 @@
 <html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>課題 · タイトル</title>
+        <title>手順３ · タイトル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
@@ -76,6 +76,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="B_QA.html" />
+    
     
     <link rel="prev" href="B_01.html" />
     
@@ -111,7 +113,7 @@
                 <a href="../">
             
                     
-                    Introduction
+                    HOME
             
                 </a>
             
@@ -191,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="B_00.md">
+        <li class="chapter " data-level="1.3.1" data-path="B_00.html">
             
-                <span>
+                <a href="B_00.html">
             
                     
                     イントロ
@@ -204,12 +206,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="B_01.html">
+        <li class="chapter " data-level="1.3.2" data-path="B_01/B_01.html">
             
-                <a href="B_01.html">
+                <a href="B_01/B_01.html">
             
                     
-                    手順
+                    手順１
             
                 </a>
             
@@ -217,9 +219,48 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="B_02.html">
+        <li class="chapter " data-level="1.3.3" data-path="B_01.html">
+            
+                <a href="B_01.html">
+            
+                    
+                    手順２
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="B_02.html">
             
                 <a href="B_02.html">
+            
+                    
+                    手順３
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="B_QA.html">
+            
+                <a href="B_QA.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="B_03.html">
+            
+                <a href="B_03.html">
             
                     
                     課題
@@ -343,7 +384,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >課題</a>
+        <a href=".." >手順３</a>
     </h1>
 </div>
 
@@ -358,52 +399,174 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><h1 id="演習b：課題"><a name="演習b：課題" class="plugin-anchor" href="#演習b：課題"><i class="fa fa-link" aria-hidden="true"></i></a>演習B：課題</h1>
+                                <html><head></head><body><h1 id="演習b：手順3"><a name="演習b：手順3" class="plugin-anchor" href="#演習b：手順3"><i class="fa fa-link" aria-hidden="true"></i></a>演習B：手順3</h1>
+<h2 id="概要"><a name="概要" class="plugin-anchor" href="#概要"><i class="fa fa-link" aria-hidden="true"></i></a>概要</h2>
 <ul>
-<li>基本課題はB-1からB-5まで全てをやること</li>
+<li>ここでは <code>tumor_communication.ipynb</code> を実行します</li>
 </ul>
-<h2 id="基本課題b-1"><a name="基本課題b-1" class="plugin-anchor" href="#基本課題b-1"><i class="fa fa-link" aria-hidden="true"></i></a>基本課題B-1</h2>
+<h3 id="tumorcommunicationipynb--の内容は？"><a name="tumorcommunicationipynb--の内容は？" class="plugin-anchor" href="#tumorcommunicationipynb--の内容は？"><i class="fa fa-link" aria-hidden="true"></i></a><code>tumor_communication.ipynb</code>  の内容は？</h3>
 <ul>
-<li>以下のようなRのコードを作成しなさい<ul>
-<li><code>tidyverse</code> を使う</li>
-<li><code>data/HOM_MouseHumanSequence.rpt</code> を読み込んで、 <code>df_hom</code> というRオブジェクトに格納する</li>
-<li>行数と列数を調べる</li>
-</ul>
-</li>
-<li>上のメニューから <code>File &gt; Download as &gt; R (.r)</code> とすることで、Rのコードをダウンロードできるので、それを manaba で提出せよ</li>
-</ul>
-<h2 id="基本課題b-2"><a name="基本課題b-2" class="plugin-anchor" href="#基本課題b-2"><i class="fa fa-link" aria-hidden="true"></i></a>基本課題B-2</h2>
-<ul>
-<li>以下のようなコードを作成しなさい<ul>
-<li><code>dim(df1)</code> をパイプ演算子を使った表現に書き換える</li>
-</ul>
-</li>
-<li>manaba に直接書き込め (ファイル提出ではない)</li>
-</ul>
-<h2 id="基本課題b-3"><a name="基本課題b-3" class="plugin-anchor" href="#基本課題b-3"><i class="fa fa-link" aria-hidden="true"></i></a>基本課題B-3</h2>
-<ul>
-<li>df1 と df2 を <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, <code>full_join()</code> でJOINした際に、それぞれの結果の行数を調べよ<ul>
-<li>ただし、キーは <code>c(&quot;human_gene_symbol&quot;=&quot;Symbol&quot;)</code> として設定する</li>
-</ul>
-</li>
-<li>manaba に直接書き込め (ファイル提出ではない)<ul>
-<li>半角で４種類の行数をコンマ（<code>,</code>）で区切れ（例： <code>103,130,142,210</code>）</li>
+<li>「非小細胞肺癌 (non-small-cell lung cancer; NSCLC)において、腫瘍組織内に存在する間質細胞から腫瘍細胞にシグナルのクロストークが起こって腫瘍が活性化されるか？ 」を調べてみる解析をRで行うノートブック<ul>
+<li><code>.ipynb</code> というのがノートブックの拡張子です</li>
 </ul>
 </li>
 </ul>
-<h2 id="基本課題b-4"><a name="基本課題b-4" class="plugin-anchor" href="#基本課題b-4"><i class="fa fa-link" aria-hidden="true"></i></a>基本課題B-4</h2>
+<h3 id="データの元論文"><a name="データの元論文" class="plugin-anchor" href="#データの元論文"><i class="fa fa-link" aria-hidden="true"></i></a>データの元論文</h3>
 <ul>
-<li><code>LR_manual_revised.txt</code> を読み込み、 <code>From</code>列と<code>To</code>列にそれぞれユニークな要素がいくつあるかを調べるRのコードを作成し、実行せよ<ul>
-<li>ヒント：unique() を使うと、重複のある行を除くことができる</li>
+<li>Toi et al., Transcriptome Analysis of Individual Stromal Cell Populations Identifies Stroma-Tumor Crosstalk in Mouse Lung Cancer Model, Cell Reports (2015)</li>
+<li><a href="https://doi.org/10.1016/j.celrep.2015.01.040" target="_blank">https://doi.org/10.1016/j.celrep.2015.01.040</a></li>
+</ul>
+<h3 id="サンプル・計測技術について"><a name="サンプル・計測技術について" class="plugin-anchor" href="#サンプル・計測技術について"><i class="fa fa-link" aria-hidden="true"></i></a>サンプル・計測技術について</h3>
+<ul>
+<li>腫瘍モデルマウス由来のRNA-seqデータ</li>
+<li>５種類の組織・細胞群 x 2種類の条件：<ul>
+<li>５種類の組織・細胞群細胞群：<ul>
+<li>NSCLCモデルマウスと野生型のマウスの肺からセルソーターで分けたもの：マクロファージ、単球細胞、好中球、上皮細胞<ul>
+<li>細胞型の分類は細胞表面の抗原マーカーによる<ul>
+<li><img src="img/2021-02-07-09-08-20.png" alt width="200"></li>
 </ul>
 </li>
-<li>新しいノートブックを作成して作成すること</li>
-<li>上のメニューから <code>File &gt; Download as &gt; Notebook (.ipynb)</code> とすることで、実行結果をダウンロードできるので、それを manaba で提出せよ</li>
 </ul>
-<h2 id="基本課題b-5"><a name="基本課題b-5" class="plugin-anchor" href="#基本課題b-5"><i class="fa fa-link" aria-hidden="true"></i></a>基本課題B-5</h2>
+</li>
+<li>Total lung cells</li>
+</ul>
+</li>
+<li>2種類の条件: WT （野生型; Wild type)、Tum (腫瘍; Tumor)</li>
+</ul>
+</li>
+</ul>
+<h3 id="解析の方針"><a name="解析の方針" class="plugin-anchor" href="#解析の方針"><i class="fa fa-link" aria-hidden="true"></i></a>解析の方針</h3>
 <ul>
-<li><code>tumor_communication.ipynb</code> をダウンロードし、実行せよ</li>
-<li>上のメニューから <code>File &gt; Download as &gt; Notebook (.ipynb)</code> とすることで、実行結果をダウンロードできるので、それを manaba で提出せよ</li>
+<li>間質細胞において「正常組織由来のサンプル」に比べて「腫瘍組織由来のサンプル」で発現量が増加している遺伝子群を抽出する</li>
+<li>腫瘍組織において正常組織において発現量が増加している遺伝子群を抽出する</li>
+<li>「1.に含まれるリガンド」と「2.に含まれる受容体（レセプター）」をリガンド・受容体のペアのデータベースと比較する</li>
+</ul>
+<h3 id="実行方法"><a name="実行方法" class="plugin-anchor" href="#実行方法"><i class="fa fa-link" aria-hidden="true"></i></a>実行方法</h3>
+<p>まず、Jupyter Hub のターミナルで以下のコマンドを実行してください。</p>
+<pre><code class="lang-bash">wget https://www.dropbox.com/s/47qm8i5na8rket0/tumor_communication.ipynb
+</code></pre>
+<p>次に、Juputer Hub で <code>tumor_communication.ipynb</code> を開く。</p>
+<h3 id="使うデータの構造"><a name="使うデータの構造" class="plugin-anchor" href="#使うデータの構造"><i class="fa fa-link" aria-hidden="true"></i></a>使うデータの構造</h3>
+<ul>
+<li><code>gene_exp.diff</code><ul>
+<li>マクロファージにおいて、各遺伝子の発現にWTとTumの条件間で差があるかを調べる発現変動解析の結果</li>
+<li>列の説明<ul>
+<li>test_id: 略</li>
+<li>gene_id: 遺伝子ID（ここでは遺伝子名が用いられている）</li>
+<li>gene: 略</li>
+<li>locus: 略</li>
+<li>sample_1: 略</li>
+<li>sample_2: 略</li>
+<li>status: 略</li>
+<li>value_1: 正常組織でのマクロファージにおける遺伝子発現量の平均値</li>
+<li>value_2: 腫瘍組織内マクロファージ (intratumoral macropahges)での遺伝子発現量の平均値</li>
+<li>log2(fold_change): value_2/value_1をlog2変換したもの。正の値であれば value_2 &gt; value_1、負の値であれば value_1 &gt; value_2</li>
+<li>test_stat: 略</li>
+<li>p_value: 発現変動を判定する統計検定の結果のp-value。小さい方が統計的に有意。</li>
+<li>q_value: p_value を多重検定補正したもの。小さい方が統計的に有意。</li>
+<li>significant: 略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>※ 縦に遺伝子名のようなものが並んでいる。各行が遺伝子、各列が変数になっている
+p_valueやq_valueは発現変動を判定する統計検定の結果だろう
+log2(fold_change) は value_2/value_1をlog2変換したものだろう
+ちなみに、value_1 は正常組織でのマクロファージ、 value_2 は腫瘍組織内マクロファージ (intratumoral macropahges)でのFPKMの平均値
+これは メタデータ をみないとわからない</p>
+</blockquote>
+<ul>
+<li><p><code>HOM_MouseHumanSequence.rpt</code></p>
+<ul>
+<li>ヒト-マウスのオーソログ関係の表。生物種ごとの遺伝子について記述されている。</li>
+<li>列の説明<ul>
+<li>HomoloGene ID: オーソログ関係自体のID。これが互いに共通なヒト遺伝子・マウス遺伝子はオーソログ関係にある</li>
+<li>Common Organism Name: 生物種名</li>
+<li>NCBI Taxon ID: 略</li>
+<li>Symbol: 遺伝子シンボル</li>
+<li>EntrezGene ID</li>
+<li>Mouse MGI ID: 略</li>
+<li>HGNC ID: 略</li>
+<li>OMIM Gene ID: 略</li>
+<li>Genetic Location: 略</li>
+<li>Genomic Coordinates (mouse: GRCm38, human: GRCh37.p10): 略</li>
+<li>Nucleotide RefSeq IDs: 略</li>
+<li>Protein RefSeq IDs: 略</li>
+<li>SWISS_PROT IDs: 略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>genes.read_group_tracking</code></p>
+<ul>
+<li>腫瘍細胞において各遺伝子の発現量をまとめた表</li>
+<li>列の説明<ul>
+<li>tracking_id: 遺伝子のID</li>
+<li>condition: 略</li>
+<li>replicate: 略</li>
+<li>raw_frags: 略</li>
+<li>internal_scaled_frags: 略</li>
+<li>external_scaled_frags: 略</li>
+<li>FPKM: 正規化された遺伝子発現量。大きい方が遺伝子発現量（mRNA量）が多い。</li>
+<li>effective_length: 略</li>
+<li>status: 略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>LR_manual_revised.txt</code></p>
+<ul>
+<li>ヒトにおける、リガンドと受容体のペアの対応関係をまとめた表</li>
+<li>列の説明<ul>
+<li>From: リガンドの遺伝子シンボル</li>
+<li>To: 受容体の遺伝子シンボル  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>GSE59831_processed_data_FPKM.txt</code><ul>
+<li>各サンプルでの各遺伝子の発現量を調べた表<ul>
+<li>Tum1, Tum2, Tum3 が腫瘍組織内マクロファージ、WT1, WT2が野生型組織でのマクロファージ、Tum9, Tum10, Tum11が腫瘍細胞における遺伝子発現量</li>
+</ul>
+</li>
+<li>列の説明<ul>
+<li>mice_gene_symbol: マウスのおける遺伝子シンボル</li>
+<li>human_gene_symbol: ヒトのおける遺伝子シンボル</li>
+<li>Tum1</li>
+<li>Tum2</li>
+<li>Tum3</li>
+<li>WT1</li>
+<li>WT2</li>
+<li>Tum4</li>
+<li>Tum5</li>
+<li>WT3</li>
+<li>WT4</li>
+<li>Tum6</li>
+<li>Tum7</li>
+<li>Tum8</li>
+<li>WT5</li>
+<li>WT6</li>
+<li>WT7</li>
+<li>Tum9</li>
+<li>Tum10</li>
+<li>Tum11</li>
+<li>WT8</li>
+<li>WT9</li>
+<li>WT10</li>
+<li>Tum12</li>
+<li>Tum13</li>
+<li>Tum14</li>
+<li>WT11</li>
+<li>WT12</li>
+<li>WT13</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </body></html>
                                 
@@ -432,10 +595,14 @@
 
             
                 
-                <a href="B_01.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 手順">
+                <a href="B_01.html" class="navigation navigation-prev " aria-label="Previous page: 手順２">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="B_QA.html" class="navigation navigation-next " aria-label="Next page: FAQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -444,7 +611,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"課題","level":"1.3.3","depth":2,"next":{"title":"演習C","level":"1.4","depth":1,"ref":"","articles":[{"title":"イントロ","level":"1.4.1","depth":2,"path":"Training_C/C_00.md","ref":"Training_C/C_00.md","articles":[]},{"title":"手順","level":"1.4.2","depth":2,"path":"Training_C/C_01.md","ref":"Training_C/C_01.md","articles":[]},{"title":"課題","level":"1.4.3","depth":2,"path":"Training_C/C_02.md","ref":"Training_C/C_02.md","articles":[]}]},"previous":{"title":"手順","level":"1.3.2","depth":2,"path":"Training_B/B_01.md","ref":"Training_B/B_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_02.md","mtime":"2023-01-21T09:13:09.155Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T11:13:36.889Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"手順３","level":"1.3.4","depth":2,"next":{"title":"FAQ","level":"1.3.5","depth":2,"path":"Training_B/B_QA.md","ref":"Training_B/B_QA.md","articles":[]},"previous":{"title":"手順２","level":"1.3.3","depth":2,"path":"Training_B/B_01.md","ref":"Training_B/B_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_02.md","mtime":"2023-01-21T13:31:05.128Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T13:52:45.037Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

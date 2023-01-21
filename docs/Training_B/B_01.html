@@ -3,7 +3,7 @@
 <html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>手順 · タイトル</title>
+        <title>手順２ · タイトル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
@@ -79,7 +79,7 @@
     <link rel="next" href="B_02.html" />
     
     
-    <link rel="prev" href="B_00.md" />
+    <link rel="prev" href="B_01/B_01.html" />
     
 
     </head>
@@ -113,7 +113,7 @@
                 <a href="../">
             
                     
-                    Introduction
+                    HOME
             
                 </a>
             
@@ -193,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="B_00.md">
+        <li class="chapter " data-level="1.3.1" data-path="B_00.html">
             
-                <span>
+                <a href="B_00.html">
             
                     
                     イントロ
@@ -206,12 +206,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="B_01.html">
+        <li class="chapter " data-level="1.3.2" data-path="B_01/B_01.html">
             
-                <a href="B_01.html">
+                <a href="B_01/B_01.html">
             
                     
-                    手順
+                    手順１
             
                 </a>
             
@@ -219,9 +219,48 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="B_02.html">
+        <li class="chapter active" data-level="1.3.3" data-path="B_01.html">
+            
+                <a href="B_01.html">
+            
+                    
+                    手順２
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="B_02.html">
             
                 <a href="B_02.html">
+            
+                    
+                    手順３
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="B_QA.html">
+            
+                <a href="B_QA.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="B_03.html">
+            
+                <a href="B_03.html">
             
                     
                     課題
@@ -345,7 +384,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >手順</a>
+        <a href=".." >手順２</a>
     </h1>
 </div>
 
@@ -360,7 +399,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><h1 id="演習b：手順"><a name="演習b：手順" class="plugin-anchor" href="#演習b：手順"><i class="fa fa-link" aria-hidden="true"></i></a>演習B：手順</h1>
+                                <html><head></head><body><h1 id="演習b：手順2"><a name="演習b：手順2" class="plugin-anchor" href="#演習b：手順2"><i class="fa fa-link" aria-hidden="true"></i></a>演習B：手順2</h1>
 <h2 id="1-データのダウンロード"><a name="1-データのダウンロード" class="plugin-anchor" href="#1-データのダウンロード"><i class="fa fa-link" aria-hidden="true"></i></a>1. データのダウンロード</h2>
 <p>Jupyter Hubのターミナルを開き、以下のコマンドを実行してデータをダウンロードしてください。</p>
 <pre><code class="lang-bash">mkdir data
@@ -618,13 +657,48 @@ mutate(df1, Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>, W
 <span class="hljs-comment"># 上と同じ</span>
 df1 %&gt;% mutate(Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>, WT12_mean = (WT1+WT2)/<span class="hljs-number">2</span>)
 </code></pre>
-<h3 id="２つの列を結合する"><a name="２つの列を結合する" class="plugin-anchor" href="#２つの列を結合する"><i class="fa fa-link" aria-hidden="true"></i></a>２つの列を結合する</h3>
+<h3 id="２つの行を結合する（join）"><a name="２つの行を結合する（join）" class="plugin-anchor" href="#２つの行を結合する（join）"><i class="fa fa-link" aria-hidden="true"></i></a>２つの行を結合する（JOIN）</h3>
 <ul>
-<li>２つの列を結合する操作を一般に JOIN (じょいん)と呼ぶ</li>
-<li>２つの表を結合するための列をキー（key）と呼ぶ</li>
+<li>２つの行を結合する操作を一般に JOIN (じょいん)と呼ぶ<ul>
+<li><img src="img/join/join.001.png" alt></li>
 </ul>
-<p><img src="img/2021-02-07-00-39-59.png" alt></p>
-<p><img src="img/2021-02-07-00-40-45.png" alt></p>
+</li>
+<li>２つの表を結合するための列をキー（key）と呼ぶ<ul>
+<li><img src="img/join/join.002.png" alt></li>
+</ul>
+</li>
+<li><p>join にはいくつか種類がある</p>
+<ul>
+<li><img src="img/join/join.003.png" alt></li>
+<li>Inner join<ul>
+<li><img src="img/join/join.004.png" alt></li>
+</ul>
+</li>
+<li>Left join<ul>
+<li><img src="img/join/join.005.png" alt></li>
+</ul>
+</li>
+<li>Right join<ul>
+<li><img src="img/join/join.006.png" alt> </li>
+</ul>
+</li>
+<li>Full (Outer) join<ul>
+<li><img src="img/join/join.007.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>tidyverseのdplyrパッケージでJOINができる</p>
+<ul>
+<li>inner join:  <code>inner_join(x, y, by = &quot;&quot;)</code></li>
+<li>left join:  <code>left_join(x, y, by = &quot;&quot;)</code></li>
+<li>right join:  <code>right_join(x, y, by = &quot;&quot;)</code></li>
+<li>full (outer) join:  <code>full_join(x, y, by = &quot;&quot;)</code></li>
+<li>※x, y はそれぞれデータフレームを指定する</li>
+<li>※byにはキーの列を指定する</li>
+</ul>
+</li>
+</ul>
 <pre><code class="lang-R">df2 &lt;- read_tsv(&quot;data/HOM_MouseHumanSequence.rpt&quot;, col_names=TRUE)
 
 # (キーの名前が２つの表で違う時は以下のように書くとよい)
@@ -637,285 +711,6 @@ df1 %&gt;%
 # join の結果を新たなオブジェクトに格納する
 df1 %&gt;% 
     inner_join(df2, by = c(&quot;mice_gene_symbol&quot;=&quot;Symbol&quot;)) -&gt; df1_and_2
-</code></pre>
-<h2 id="3-tumorcommunicationipynb-を実行する"><a name="3-tumorcommunicationipynb-を実行する" class="plugin-anchor" href="#3-tumorcommunicationipynb-を実行する"><i class="fa fa-link" aria-hidden="true"></i></a>3. <code>tumor_communication.ipynb</code> を実行する</h2>
-<h3 id="これはなんなのか？"><a name="これはなんなのか？" class="plugin-anchor" href="#これはなんなのか？"><i class="fa fa-link" aria-hidden="true"></i></a>これはなんなのか？</h3>
-<ul>
-<li>「非小細胞肺癌 (non-small-cell lung cancer; NSCLC)において、腫瘍組織内に存在する間質細胞から腫瘍細胞にシグナルのクロストークが起こって腫瘍が活性化されるか？ 」を調べてみる解析をRで行うノートブック<ul>
-<li><code>.ipynb</code> というのがノートブックの拡張子です</li>
-</ul>
-</li>
-</ul>
-<h3 id="データの元論文"><a name="データの元論文" class="plugin-anchor" href="#データの元論文"><i class="fa fa-link" aria-hidden="true"></i></a>データの元論文</h3>
-<ul>
-<li>Toi et al., Transcriptome Analysis of Individual Stromal Cell Populations Identifies Stroma-Tumor Crosstalk in Mouse Lung Cancer Model, Cell Reports (2015)</li>
-<li><a href="https://doi.org/10.1016/j.celrep.2015.01.040" target="_blank">https://doi.org/10.1016/j.celrep.2015.01.040</a></li>
-</ul>
-<h3 id="サンプル・計測技術について"><a name="サンプル・計測技術について" class="plugin-anchor" href="#サンプル・計測技術について"><i class="fa fa-link" aria-hidden="true"></i></a>サンプル・計測技術について</h3>
-<ul>
-<li>腫瘍モデルマウス由来のRNA-seqデータ</li>
-<li>５種類の組織・細胞群 x 2種類の条件：<ul>
-<li>５種類の組織・細胞群細胞群：<ul>
-<li>NSCLCモデルマウスと野生型のマウスの肺からセルソーターで分けたもの：マクロファージ、単球細胞、好中球、上皮細胞<ul>
-<li>細胞型の分類は細胞表面の抗原マーカーによる<ul>
-<li><img src="img/2021-02-07-09-08-20.png" alt width="200"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Total lung cells</li>
-</ul>
-</li>
-<li>2種類の条件: WT （野生型; Wild type)、Tum (腫瘍; Tumor)</li>
-</ul>
-</li>
-</ul>
-<h3 id="解析の方針"><a name="解析の方針" class="plugin-anchor" href="#解析の方針"><i class="fa fa-link" aria-hidden="true"></i></a>解析の方針</h3>
-<ul>
-<li>間質細胞において「正常組織由来のサンプル」に比べて「腫瘍組織由来のサンプル」で発現量が増加している遺伝子群を抽出する</li>
-<li>腫瘍組織において正常組織において発現量が増加している遺伝子群を抽出する</li>
-<li>「1.に含まれるリガンド」と「2.に含まれる受容体（レセプター）」をリガンド・受容体のペアのデータベースと比較する</li>
-</ul>
-<h3 id="実行方法"><a name="実行方法" class="plugin-anchor" href="#実行方法"><i class="fa fa-link" aria-hidden="true"></i></a>実行方法</h3>
-<p>まず、Jupyter Hub のターミナルで以下のコマンドを実行してください。</p>
-<pre><code class="lang-bash">wget https://www.dropbox.com/s/47qm8i5na8rket0/tumor_communication.ipynb
-</code></pre>
-<p>次に、Juputer Hub で <code>tumor_communication.ipynb</code> を開く。</p>
-<h3 id="使うデータの構造"><a name="使うデータの構造" class="plugin-anchor" href="#使うデータの構造"><i class="fa fa-link" aria-hidden="true"></i></a>使うデータの構造</h3>
-<ul>
-<li><code>gene_exp.diff</code><ul>
-<li>マクロファージにおいて、各遺伝子の発現にWTとTumの条件間で差があるかを調べる発現変動解析の結果</li>
-<li>列の説明<ul>
-<li>test_id: 略</li>
-<li>gene_id: 遺伝子ID（ここでは遺伝子名が用いられている）</li>
-<li>gene: 略</li>
-<li>locus: 略</li>
-<li>sample_1: 略</li>
-<li>sample_2: 略</li>
-<li>status: 略</li>
-<li>value_1: 正常組織でのマクロファージにおける遺伝子発現量の平均値</li>
-<li>value_2: 腫瘍組織内マクロファージ (intratumoral macropahges)での遺伝子発現量の平均値</li>
-<li>log2(fold_change): value_2/value_1をlog2変換したもの。正の値であれば value_2 &gt; value_1、負の値であれば value_1 &gt; value_2</li>
-<li>test_stat: 略</li>
-<li>p_value: 発現変動を判定する統計検定の結果のp-value。小さい方が統計的に有意。</li>
-<li>q_value: p_value を多重検定補正したもの。小さい方が統計的に有意。</li>
-<li>significant: 略</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>※ 縦に遺伝子名のようなものが並んでいる。各行が遺伝子、各列が変数になっている
-p_valueやq_valueは発現変動を判定する統計検定の結果だろう
-log2(fold_change) は value_2/value_1をlog2変換したものだろう
-ちなみに、value_1 は正常組織でのマクロファージ、 value_2 は腫瘍組織内マクロファージ (intratumoral macropahges)でのFPKMの平均値
-これは メタデータ をみないとわからない</p>
-</blockquote>
-<ul>
-<li><p><code>HOM_MouseHumanSequence.rpt</code></p>
-<ul>
-<li>ヒト-マウスのオーソログ関係の表。生物種ごとの遺伝子について記述されている。</li>
-<li>列の説明<ul>
-<li>HomoloGene ID: オーソログ関係自体のID。これが互いに共通なヒト遺伝子・マウス遺伝子はオーソログ関係にある</li>
-<li>Common Organism Name: 生物種名</li>
-<li>NCBI Taxon ID: 略</li>
-<li>Symbol: 遺伝子シンボル</li>
-<li>EntrezGene ID</li>
-<li>Mouse MGI ID: 略</li>
-<li>HGNC ID: 略</li>
-<li>OMIM Gene ID: 略</li>
-<li>Genetic Location: 略</li>
-<li>Genomic Coordinates (mouse: GRCm38, human: GRCh37.p10): 略</li>
-<li>Nucleotide RefSeq IDs: 略</li>
-<li>Protein RefSeq IDs: 略</li>
-<li>SWISS_PROT IDs: 略</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>genes.read_group_tracking</code></p>
-<ul>
-<li>腫瘍細胞において各遺伝子の発現量をまとめた表</li>
-<li>列の説明<ul>
-<li>tracking_id: 遺伝子のID</li>
-<li>condition: 略</li>
-<li>replicate: 略</li>
-<li>raw_frags: 略</li>
-<li>internal_scaled_frags: 略</li>
-<li>external_scaled_frags: 略</li>
-<li>FPKM: 正規化された遺伝子発現量。大きい方が遺伝子発現量（mRNA量）が多い。</li>
-<li>effective_length: 略</li>
-<li>status: 略</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>LR_manual_revised.txt</code></p>
-<ul>
-<li>ヒトにおける、リガンドと受容体のペアの対応関係をまとめた表</li>
-<li>列の説明<ul>
-<li>From: リガンドの遺伝子シンボル</li>
-<li>To: 受容体の遺伝子シンボル  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><code>GSE59831_processed_data_FPKM.txt</code><ul>
-<li>各サンプルでの各遺伝子の発現量を調べた表<ul>
-<li>Tum1, Tum2, Tum3 が腫瘍組織内マクロファージ、WT1, WT2が野生型組織でのマクロファージ、Tum9, Tum10, Tum11が腫瘍細胞における遺伝子発現量</li>
-</ul>
-</li>
-<li>列の説明<ul>
-<li>mice_gene_symbol: マウスのおける遺伝子シンボル</li>
-<li>human_gene_symbol: ヒトのおける遺伝子シンボル</li>
-<li>Tum1</li>
-<li>Tum2</li>
-<li>Tum3</li>
-<li>WT1</li>
-<li>WT2</li>
-<li>Tum4</li>
-<li>Tum5</li>
-<li>WT3</li>
-<li>WT4</li>
-<li>Tum6</li>
-<li>Tum7</li>
-<li>Tum8</li>
-<li>WT5</li>
-<li>WT6</li>
-<li>WT7</li>
-<li>Tum9</li>
-<li>Tum10</li>
-<li>Tum11</li>
-<li>WT8</li>
-<li>WT9</li>
-<li>WT10</li>
-<li>Tum12</li>
-<li>Tum13</li>
-<li>Tum14</li>
-<li>WT11</li>
-<li>WT12</li>
-<li>WT13</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="---"><a name="---" class="plugin-anchor" href="#---"><i class="fa fa-link" aria-hidden="true"></i></a>----</h2>
-<h2 id="---"><a name="---" class="plugin-anchor" href="#---"><i class="fa fa-link" aria-hidden="true"></i></a>----</h2>
-<h1 id="演習-追記・qaなど"><a name="演習-追記・qaなど" class="plugin-anchor" href="#演習-追記・qaなど"><i class="fa fa-link" aria-hidden="true"></i></a>演習 追記・QAなど</h1>
-<!-- ## `.ipynb`ファイルのダウンロード・アップロードする方法
-1. GitHub の tumor_communication.ipynb のページまで行きます
-    - https://github.com/bioinfo-tsukuba/20210207-EB62104-Bioinformatics/blob/main/%E6%BC%94%E7%BF%92A/tumor_communication.ipynb
-2. Raw というボタンを押すと、ファイルの中身が直接ブラウザに表示されます
-    - URL例: https://raw.githubusercontent.com/bioinfo-tsukuba/20210207-EB62104-Bioinformatics/main/%E6%BC%94%E7%BF%92A/tumor_communication.ipynb
-3. ２通りの方法があります
-    - a: 一旦ファイルを自分のコンピューターに保存して、JupyterHubにアップロード
-    - b: jupyterHubのターミナルで wget で URL から直接ダウンロード -->
-<!-- ### 基本課題A-3 ですが、 outer_join と書いてあるのは full_join の誤りでした
-
-・関数名は `full_join()` でした
-・manaba で修正しました https://manaba.tsukuba.ac.jp/ct/course_1318532_rptadmpreview_1855392
-・GitHub でも修正しました https://github.com/bioinfo-tsukuba/20210207-EB62104-Bioinformatics/tree/main/%E6%BC%94%E7%BF%92A -->
-<!-- ### 基本課題 A-3 は行数のみを提出してください
-
-基本課題 A-3 は行数のみを提出してください（コードは提出しません） -->
-<!-- 
-### 基本課題A-5 の提出方法を変更します (PDFではなくHTML)
-
-- PDF としていましたが、 HTML (.html) でダウンロードし、manabaで提出してください
-- PDF出力がノートブック大きい場合にエラーに出るための措置です -->
-<h2 id="4テーブルの読み込みで、headを実行してtsvかcsvか確かめるとありますが、headを実行してもいろいろ文字が出てきてどこを見ればいいかわかりません"><a name="4テーブルの読み込みで、headを実行してtsvかcsvか確かめるとありますが、headを実行してもいろいろ文字が出てきてどこを見ればいいかわかりません" class="plugin-anchor" href="#4テーブルの読み込みで、headを実行してtsvかcsvか確かめるとありますが、headを実行してもいろいろ文字が出てきてどこを見ればいいかわかりません"><i class="fa fa-link" aria-hidden="true"></i></a>4.テーブルの読み込みで、headを実行してTSVかCSVか確かめるとありますが、headを実行してもいろいろ文字が出てきてどこを見ればいいかわかりません…</h2>
-<p>簡易的には、</p>
-<ul>
-<li>コンマで区切られていなければ CSV ではない</li>
-<li>一方で、半角スペースではなくタブっぽい間の空き方だったら、TSV</li>
-</ul>
-<p>あとは例えば、 <code>awk</code> というコマンドを使う方が確実かもしれません</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># １行目にタブが含まれていたら１行目が出力される → TSV</span>
-$ awk <span class="hljs-string">&apos;NR==1 &amp;&amp; /\t/{print}&apos;</span> data/GSE59831_processed_data_FPKM.txt
-
-<span class="hljs-comment"># １行目にコンマが含まれていたら１行目が出力される → CSV</span>
-<span class="hljs-variable">$awk</span> <span class="hljs-string">&apos;NR==1 &amp;&amp; /,/{print}&apos;</span> data/GSE59831_processed_data_FPKM.txt
-</code></pre>
-<h2 id="isna-の話"><a name="isna-の話" class="plugin-anchor" href="#isna-の話"><i class="fa fa-link" aria-hidden="true"></i></a><code>!is.na()</code> の話</h2>
-<ul>
-<li>JOIN で NA などの欠損値が出ることがあります</li>
-<li>欠損値が邪魔な場合に除くには、まずどれが欠損値かを調べる必要があります</li>
-<li><code>is.na()</code> は欠損値であれば TRUE、そうでなければ FALSEを返します</li>
-<li><code>!</code> がつくと TRUE/FALSE を逆転させます。<ul>
-<li><code>! (WT1&gt;100)</code> は <code>(WT1&lt;=100)</code> と同じ意味です</li>
-</ul>
-</li>
-<li>なので、 <code>!is.na(列名)</code> は ある列の値が欠損値 （NA） <strong>でない</strong> 行ならばTRUE、 NAならばFALSEを返します</li>
-</ul>
-<pre><code class="lang-R"><span class="hljs-comment"># human が NA でないの行だけにする</span>
-fpkm_epi_tumor_human %&lt;&gt;% filter(!<span class="hljs-built_in">is.na</span>(human))
-
-<span class="hljs-comment"># human が NA でないの行だけにする (上と同じ意味)</span>
-fpkm_epi_tumor_human %&lt;&gt;% filter(! <span class="hljs-built_in">is.na</span>(human))
-</code></pre>
-<h2 id="librarymagrittr--の話"><a name="librarymagrittr--の話" class="plugin-anchor" href="#librarymagrittr--の話"><i class="fa fa-link" aria-hidden="true"></i></a><code>library(magrittr)</code>, <code>%&lt;&gt;%</code> の話</h2>
-<ul>
-<li><code>magrittr</code> パッケージが使える</li>
-<li>例えば <code>%&lt;&gt;%</code> が使える。これはパイプの結果を戻して代入すること</li>
-</ul>
-<pre><code class="lang-R">df1_selected &lt;- select(df1, mice_gene_symbol, WT1)
-
-# 以下の３つは同じ意味
-df1_selected %&lt;&gt;% fitler(WT1 &gt; 100)
-
-df1_selected %&lt;&gt;% 
-    fitler(WT1 &gt; 100)
-
-df1_selected %&gt;%
-    fitler(WT1 &gt; 100) -&gt; df1_selected
-</code></pre>
-<h2 id="バックスラッシュ----の話"><a name="バックスラッシュ----の話" class="plugin-anchor" href="#バックスラッシュ----の話"><i class="fa fa-link" aria-hidden="true"></i></a>バックスラッシュ ( ` ) の話</h2>
-<p>・Rでは文字列を &quot; (ダブルクオート） もしくは &apos; （シングルクオート）で囲みます
-・一方、tidyverse では列名を &quot; や &apos; で囲まずに、そのまま書きます
-・ところが、列名に半角スペースやカッコが含まれているとうまくいかない。その場合ににはバッククオート（`）で列名を囲むと「そのままの列名」としてRに解釈してもらえる</p>
-<pre><code class="lang-R"><span class="hljs-comment"># この例では  log2(fold_change)  をバッククオートで囲んでいる</span>
-deg_macrophage %&lt;&gt;% select(gene_id, value_1, value_2, `log2(fold_change)`, p_value, q_value)
-
-<span class="hljs-comment"># 注意：バッククオートを外すとうまくいかなくなる</span>
-deg_macrophage %&lt;&gt;% select(gene_id, value_1, value_2, log2(fold_change), p_value, q_value)
-</code></pre>
-<h2 id="in-について"><a name="in-について" class="plugin-anchor" href="#in-について"><i class="fa fa-link" aria-hidden="true"></i></a><code>%in%</code> について</h2>
-<ul>
-<li><code>%in%</code> は、あるベクトルの要素が別のベクトルの要素に含まれているかを返す演算子です</li>
-<li><code>a %in% b</code> で、aとbがそれぞれベクトルの時、aの各要素が b に含まれるかどうかを（aの長さの分だけ） TRUEもしくはFALSEで返します</li>
-</ul>
-<pre><code class="lang-R">a &lt;- <span class="hljs-built_in">c</span>(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;W&quot;</span>, <span class="hljs-string">&quot;Z&quot;</span>) 
-
-b &lt;- <span class="hljs-built_in">c</span>(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;Y&quot;</span>, <span class="hljs-string">&quot;Z&quot;</span>)
-
-<span class="hljs-comment"># a の &quot;A&quot;, &quot;Z&quot; は b に含まれるが、&quot;W&quot; は含まれないので、</span>
-<span class="hljs-comment"># 順に TRUE FALSE TRUE が出力される</span>
-a %in% b
-</code></pre>
-<pre><code class="lang-R"><span class="hljs-comment"># `From %in% deg_macrophage_tumor_human$human` は</span>
-<span class="hljs-comment"># From の各要素が deg_macrophage_tumor_human$human に含まれるなら TRUE、 </span>
-<span class="hljs-comment"># そうでないなら FALSE を返す</span>
-dflr %&gt;% 
-    mutate(ligand_up_in_tumor_macrophage = From %in% deg_macrophage_tumor_human$human)
-</code></pre>
-<h2 id="rに組み込みの作図関数について"><a name="rに組み込みの作図関数について" class="plugin-anchor" href="#rに組み込みの作図関数について"><i class="fa fa-link" aria-hidden="true"></i></a>Rに組み込みの作図関数について</h2>
-<h3 id="ヒストグラムを描く-hist"><a name="ヒストグラムを描く-hist" class="plugin-anchor" href="#ヒストグラムを描く-hist"><i class="fa fa-link" aria-hidden="true"></i></a>ヒストグラムを描く <code>hist()</code></h3>
-<ul>
-<li><code>hist()</code> は第一引数で数値の列を与えると、そのヒストグラムを描きます</li>
-</ul>
-<h2 id="プロットを描く-plot"><a name="プロットを描く-plot" class="plugin-anchor" href="#プロットを描く-plot"><i class="fa fa-link" aria-hidden="true"></i></a>プロットを描く <code>plot()</code></h2>
-<ul>
-<li><code>plot()</code> は様々なプロットを描ける関数です</li>
-<li>例えば、 <code>plot(x, y)</code> と x と y が同じ長さの数値列の場合、散布図を描くことができます</li>
-</ul>
-<h3 id="filter-でコンマ（）で繋ぐのは"><a name="filter-でコンマ（）で繋ぐのは" class="plugin-anchor" href="#filter-でコンマ（）で繋ぐのは"><i class="fa fa-link" aria-hidden="true"></i></a><code>filter()</code> でコンマ（<code>,</code>）で繋ぐのは</h3>
-<pre><code class="lang-R"><span class="hljs-comment"># 以下の２つは同じ意味です</span>
-s
-filter(`log2(fold_change)` &gt; log2(<span class="hljs-number">1.5</span>), q_value &lt; <span class="hljs-number">0.1</span>)
 </code></pre>
 </body></html>
                                 
@@ -944,12 +739,12 @@ filter(`log2(fold_change)` &gt; log2(<span class="hljs-number">1.5</span>), q_va
 
             
                 
-                <a href="B_00.md" class="navigation navigation-prev " aria-label="Previous page: イントロ">
+                <a href="B_01/B_01.html" class="navigation navigation-prev " aria-label="Previous page: 手順１">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="B_02.html" class="navigation navigation-next " aria-label="Next page: 課題">
+                <a href="B_02.html" class="navigation navigation-next " aria-label="Next page: 手順３">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -960,7 +755,7 @@ filter(`log2(fold_change)` &gt; log2(<span class="hljs-number">1.5</span>), q_va
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"手順","level":"1.3.2","depth":2,"next":{"title":"課題","level":"1.3.3","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"previous":{"title":"イントロ","level":"1.3.1","depth":2,"path":"Training_B/B_00.md","ref":"Training_B/B_00.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01.md","mtime":"2023-01-21T09:53:22.292Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T11:13:36.889Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"手順２","level":"1.3.3","depth":2,"next":{"title":"手順３","level":"1.3.4","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"previous":{"title":"手順１","level":"1.3.2","depth":2,"path":"Training_B/B_01/B_01.md","ref":"Training_B/B_01/B_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01.md","mtime":"2023-01-21T13:21:22.612Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T13:52:45.037Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
