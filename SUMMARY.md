@@ -26,4 +26,4 @@
 
 ## Links
 
-  * [manabaのページ](https://manaba.tsukuba.ac.jp/ct/course_2438996)
+  * [manabaのページ](https://manaba.tsukuba.ac.jp/ct/course_2907352)
