@@ -1,6 +1,6 @@
 # 2022年度 生物学類 「バイオインフォマティクス」 EB62104
 
-* [manabaのページ](https://manaba.tsukuba.ac.jp/ct/course_2438996)
+* [manabaのページ](https://manaba.tsukuba.ac.jp/ct/course_2907352)
 
 ## スケジュール
 
