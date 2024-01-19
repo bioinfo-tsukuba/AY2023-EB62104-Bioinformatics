@@ -6,7 +6,7 @@
         <title>手順１ · タイトル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="generator" content="HonKit 5.1.4">
         
         
         
@@ -343,7 +343,7 @@
     
         <li class="chapter " data-level="2.1" >
             
-                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2438996">
+                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2907352">
             
                     
                     manabaのページ
@@ -414,12 +414,12 @@
 <li><code>library()</code> 関数を使う</li>
 <li><code>tidyverse</code> はデータフレーム系の処理が便利なパッケージ</li>
 </ul>
-<pre><code class="lang-R">library(tidyverse)
+<pre><code class="lang-R">library<span class="hljs-punctuation">(</span>tidyverse<span class="hljs-punctuation">)</span>
 </code></pre>
 <ul>
 <li><code>lubridate</code> は日付のデータを扱うのに便利なパッケージ。</li>
 </ul>
-<pre><code class="lang-R">library(lubridate)
+<pre><code class="lang-R">library<span class="hljs-punctuation">(</span>lubridate<span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="ファイルの読み込み"><a name="ファイルの読み込み" class="plugin-anchor" href="#ファイルの読み込み"><i class="fa fa-link" aria-hidden="true"></i></a>ファイルの読み込み</h2>
 <ul>
@@ -429,14 +429,14 @@
 </li>
 <li><code>df1</code> という名前のオブジェクトに読み込んだデータをデータフレーム（表）として代入</li>
 </ul>
-<pre><code class="lang-R">df1 &lt;- read_csv(<span class="hljs-string">&quot;data/newly_confirmed_cases_daily_20220121.csv&quot;</span>, col_names=<span class="hljs-literal">TRUE</span>)
+<pre><code class="lang-R">df1 <span class="hljs-operator">&lt;-</span> read_csv<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;data/newly_confirmed_cases_daily_20220121.csv&quot;</span><span class="hljs-punctuation">,</span> col_names<span class="hljs-operator">=</span><span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="読み込んだファイルの中身の確認"><a name="読み込んだファイルの中身の確認" class="plugin-anchor" href="#読み込んだファイルの中身の確認"><i class="fa fa-link" aria-hidden="true"></i></a>読み込んだファイルの中身の確認</h2>
 <ul>
 <li><code>head()</code> 関数は、オブジェクトの最初の数行を出力に表示してくれる</li>
 <li>ファイルを読み込んだ後はこのように中身を確認することで、意図通りのデータ構造になっているか、文字化けがないかなどを確認できる</li>
 </ul>
-<pre><code class="lang-R">head(df1)
+<pre><code class="lang-R">head<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="列のデータ型（クラス）の変更"><a name="列のデータ型（クラス）の変更" class="plugin-anchor" href="#列のデータ型（クラス）の変更"><i class="fa fa-link" aria-hidden="true"></i></a>列のデータ型（クラス）の変更</h2>
 <ul>
@@ -478,10 +478,10 @@
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">df1 &lt;- df1 %&gt;%
-    mutate(Date = as_date(Date))
+<pre><code class="lang-R">df1 <span class="hljs-operator">&lt;-</span> df1 <span class="hljs-operator">%&gt;%</span>
+    mutate<span class="hljs-punctuation">(</span>Date <span class="hljs-operator">=</span> as_date<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 </code></pre>
-<pre><code class="lang-R">head(df1)
+<pre><code class="lang-R">head<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="tidyなデータへの変換：横長のデータから縦長のデータへ"><a name="tidyなデータへの変換：横長のデータから縦長のデータへ" class="plugin-anchor" href="#tidyなデータへの変換：横長のデータから縦長のデータへ"><i class="fa fa-link" aria-hidden="true"></i></a>tidyなデータへの変換：横長のデータから縦長のデータへ</h2>
 <ul>
@@ -537,11 +537,11 @@
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">df1long &lt;- df1 %&gt;%
-    select(Date, Tokyo, Ibaraki) %&gt;%
-    pivot_longer(<span class="hljs-built_in">c</span>(Tokyo, Ibaraki), names_to = <span class="hljs-string">&quot;Place&quot;</span>, values_to = <span class="hljs-string">&quot;N_positive&quot;</span>)
+<pre><code class="lang-R">df1long <span class="hljs-operator">&lt;-</span> df1 <span class="hljs-operator">%&gt;%</span>
+    select<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> Tokyo<span class="hljs-punctuation">,</span> Ibaraki<span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span>
+    pivot_longer<span class="hljs-punctuation">(</span><span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span>Tokyo<span class="hljs-punctuation">,</span> Ibaraki<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> names_to <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Place&quot;</span><span class="hljs-punctuation">,</span> values_to <span class="hljs-operator">=</span> <span class="hljs-string">&quot;N_positive&quot;</span><span class="hljs-punctuation">)</span>
 
-head(df1long)
+head<span class="hljs-punctuation">(</span>df1long<span class="hljs-punctuation">)</span>
 </code></pre>
 <ul>
 <li>こんな感じの出力がされる <ul>
@@ -572,10 +572,10 @@ head(df1long)
 <li><code>mutate()</code> は列の追加ができる（前述）</li>
 <li><code>wday()</code> は第1引数に設定された日付を曜日に変換できる</li>
 </ul>
-<pre><code class="lang-R">df1long &lt;- df1long %&gt;%
-    mutate(Day = wday(Date, label = <span class="hljs-literal">TRUE</span>, abbr = <span class="hljs-literal">TRUE</span>))
+<pre><code class="lang-R">df1long <span class="hljs-operator">&lt;-</span> df1long <span class="hljs-operator">%&gt;%</span>
+    mutate<span class="hljs-punctuation">(</span>Day <span class="hljs-operator">=</span> wday<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> label <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">,</span> abbr <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 
-head(df1long)
+head<span class="hljs-punctuation">(</span>df1long<span class="hljs-punctuation">)</span>
 </code></pre>
 <ul>
 <li>下のような出力がされるはず<ul>
@@ -605,7 +605,7 @@ head(df1long)
 <ul>
 <li>Jupyter notebook 特有で必要になるコマンド。図がプロットされる領域のサイズを変更するのに使用する。</li>
 </ul>
-<pre><code class="lang-R">options(repr.plot.width=<span class="hljs-number">12</span>, repr.plot.height=<span class="hljs-number">6</span>)
+<pre><code class="lang-R">options<span class="hljs-punctuation">(</span>repr.plot.width<span class="hljs-operator">=</span><span class="hljs-number">12</span><span class="hljs-punctuation">,</span> repr.plot.height<span class="hljs-operator">=</span><span class="hljs-number">6</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="図のプロット：普通の折れ線グラフ"><a name="図のプロット：普通の折れ線グラフ" class="plugin-anchor" href="#図のプロット：普通の折れ線グラフ"><i class="fa fa-link" aria-hidden="true"></i></a>図のプロット：普通の折れ線グラフ</h2>
 <ul>
@@ -636,9 +636,9 @@ head(df1long)
 <ul>
 <li>これだと、 <code>Tokyo</code> と <code>Ibaraki</code> のデータが混ざっている</li>
 </ul>
-<pre><code class="lang-R">g1 &lt;- ggplot(df1long, aes(x=Date, y=N_positive)) + geom_line()
+<pre><code class="lang-R">g1 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>x<span class="hljs-operator">=</span>Date<span class="hljs-punctuation">,</span> y<span class="hljs-operator">=</span>N_positive<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span>
 
-plot(g1)
+plot<span class="hljs-punctuation">(</span>g1<span class="hljs-punctuation">)</span>
 </code></pre>
 <ul>
 <li>下のような出力がされることを確認する</li>
@@ -652,9 +652,9 @@ plot(g1)
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">g2 &lt;- ggplot(df1long, aes(Date, N_positive, color=Place)) + geom_line()
+<pre><code class="lang-R">g2 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">,</span> color<span class="hljs-operator">=</span>Place<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span>
 
-plot(g2)
+plot<span class="hljs-punctuation">(</span>g2<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_20_0.png" alt="png"></p>
 <h2 id="データフレームのうち、特定の条件に当てはまる行を抽出する"><a name="データフレームのうち、特定の条件に当てはまる行を抽出する" class="plugin-anchor" href="#データフレームのうち、特定の条件に当てはまる行を抽出する"><i class="fa fa-link" aria-hidden="true"></i></a>データフレームのうち、特定の条件に当てはまる行を抽出する</h2>
@@ -692,12 +692,12 @@ plot(g2)
 <li><code>dim(df1long_sub)</code> の出力から 240 行になっていることを確認</li>
 <li><code>dim(df1long)</code> で元のデータフレーは 2202行であることを確認</li>
 </ul>
-<pre><code class="lang-R">df1long_sub &lt;- df1long %&gt;% 
-    filter(Date &gt; <span class="hljs-string">&quot;2022-06-01&quot;</span> &amp; Date &lt; <span class="hljs-string">&quot;2022-09-30&quot;</span>)
+<pre><code class="lang-R">df1long_sub <span class="hljs-operator">&lt;-</span> df1long <span class="hljs-operator">%&gt;%</span> 
+    filter<span class="hljs-punctuation">(</span>Date <span class="hljs-operator">&gt;</span> <span class="hljs-string">&quot;2022-06-01&quot;</span> <span class="hljs-operator">&amp;</span> Date <span class="hljs-operator">&lt;</span> <span class="hljs-string">&quot;2022-09-30&quot;</span><span class="hljs-punctuation">)</span>
 
-print(<span class="hljs-built_in">dim</span>(df1long_sub))
+print<span class="hljs-punctuation">(</span><span class="hljs-built_in">dim</span><span class="hljs-punctuation">(</span>df1long_sub<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 </code></pre>
-<pre><code class="lang-R">print(<span class="hljs-built_in">dim</span>(df1long))
+<pre><code class="lang-R">print<span class="hljs-punctuation">(</span><span class="hljs-built_in">dim</span><span class="hljs-punctuation">(</span>df1long<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h3 id="データフレームを差し替えてプロット"><a name="データフレームを差し替えてプロット" class="plugin-anchor" href="#データフレームを差し替えてプロット"><i class="fa fa-link" aria-hidden="true"></i></a>データフレームを差し替えてプロット</h3>
 <ul>
@@ -708,9 +708,9 @@ print(<span class="hljs-built_in">dim</span>(df1long_sub))
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">g3 &lt;- ggplot(df1long_sub, aes(Date, N_positive, color=Place)) + geom_line()
+<pre><code class="lang-R">g3 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long_sub<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">,</span> color<span class="hljs-operator">=</span>Place<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span>
 
-plot(g3)
+plot<span class="hljs-punctuation">(</span>g3<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_25_0.png" alt="png"></p>
 <h2 id="データを特定の列の属性で分けてプロット"><a name="データを特定の列の属性で分けてプロット" class="plugin-anchor" href="#データを特定の列の属性で分けてプロット"><i class="fa fa-link" aria-hidden="true"></i></a>データを特定の列の属性で分けてプロット</h2>
@@ -729,34 +729,34 @@ plot(g3)
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">g4 &lt;- ggplot(df1long_sub, aes(Date, N_positive)) + geom_line() +
-            facet_grid(Place~.)
+<pre><code class="lang-R">g4 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long_sub<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+            facet_grid<span class="hljs-punctuation">(</span>Place<span class="hljs-operator">~</span>.<span class="hljs-punctuation">)</span>
 
-plot(g4)
+plot<span class="hljs-punctuation">(</span>g4<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_27_0.png" alt="png"></p>
 <h3 id="facetgrid-の-scales--freey-オプション"><a name="facetgrid-の-scales--freey-オプション" class="plugin-anchor" href="#facetgrid-の-scales--freey-オプション"><i class="fa fa-link" aria-hidden="true"></i></a><code>facet_grid()</code> の <code>scales = &quot;free_y&quot;</code> オプション</h3>
 <ul>
 <li><code>facet_grid()</code> の <code>scales = &quot;free_y&quot;</code> オプションを使うと、y軸の範囲をプロットごとに変えて表示できる</li>
 </ul>
-<pre><code class="lang-R">df1long_sub &lt;- df1long %&gt;% filter(Date &gt; <span class="hljs-string">&quot;2022-06-01&quot;</span> &amp; Date &lt; <span class="hljs-string">&quot;2022-09-30&quot;</span>)
+<pre><code class="lang-R">df1long_sub <span class="hljs-operator">&lt;-</span> df1long <span class="hljs-operator">%&gt;%</span> filter<span class="hljs-punctuation">(</span>Date <span class="hljs-operator">&gt;</span> <span class="hljs-string">&quot;2022-06-01&quot;</span> <span class="hljs-operator">&amp;</span> Date <span class="hljs-operator">&lt;</span> <span class="hljs-string">&quot;2022-09-30&quot;</span><span class="hljs-punctuation">)</span>
 
-g5 &lt;- ggplot(df1long_sub, aes(Date, N_positive)) + geom_line() +
-            facet_grid(Place~., scales = <span class="hljs-string">&quot;free_y&quot;</span>)
+g5 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long_sub<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+            facet_grid<span class="hljs-punctuation">(</span>Place<span class="hljs-operator">~</span>.<span class="hljs-punctuation">,</span> scales <span class="hljs-operator">=</span> <span class="hljs-string">&quot;free_y&quot;</span><span class="hljs-punctuation">)</span>
 
-plot(g5)
+plot<span class="hljs-punctuation">(</span>g5<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_29_0.png" alt="png"></p>
 <h3 id="colorday-と指定することで、曜日によってデータを変えられる"><a name="colorday-と指定することで、曜日によってデータを変えられる" class="plugin-anchor" href="#colorday-と指定することで、曜日によってデータを変えられる"><i class="fa fa-link" aria-hidden="true"></i></a><code>color=Day</code> と指定することで、曜日によってデータを変えられる</h3>
 <ul>
 <li><code>ggplot()</code> の中の <code>aes()</code> の中で  <code>color=Day</code>と追加することで、曜日ごとのデータを折れ線グラフの色を変えた形で表示する</li>
 </ul>
-<pre><code class="lang-R">g7 &lt;- ggplot(df1long_sub, aes(Date, N_positive, color=Day)) + geom_line() + 
-            facet_grid(Place~., scales = <span class="hljs-string">&quot;free_y&quot;</span>) +
-            labs(title = <span class="hljs-string">&quot;Only Wednesday&quot;</span>)
+<pre><code class="lang-R">g7 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long_sub<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">,</span> color<span class="hljs-operator">=</span>Day<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> 
+            facet_grid<span class="hljs-punctuation">(</span>Place<span class="hljs-operator">~</span>.<span class="hljs-punctuation">,</span> scales <span class="hljs-operator">=</span> <span class="hljs-string">&quot;free_y&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+            labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Only Wednesday&quot;</span><span class="hljs-punctuation">)</span>
 
 
-plot(g7)
+plot<span class="hljs-punctuation">(</span>g7<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_31_0.png" alt="png"></p>
 <h3 id="facetgrid-の行方向-row-と列方向-column-で２種類の列を指定する"><a name="facetgrid-の行方向-row-と列方向-column-で２種類の列を指定する" class="plugin-anchor" href="#facetgrid-の行方向-row-と列方向-column-で２種類の列を指定する"><i class="fa fa-link" aria-hidden="true"></i></a><code>facet_grid()</code> の行方向 (row) と列方向 (column) で２種類の列を指定する</h3>
@@ -771,13 +771,13 @@ plot(g7)
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">df1long_sub3 &lt;- df1long %&gt;% filter(Date &gt; <span class="hljs-string">&quot;2022-06-01&quot;</span> &amp; Date &lt; <span class="hljs-string">&quot;2022-09-30&quot;</span>)
+<pre><code class="lang-R">df1long_sub3 <span class="hljs-operator">&lt;-</span> df1long <span class="hljs-operator">%&gt;%</span> filter<span class="hljs-punctuation">(</span>Date <span class="hljs-operator">&gt;</span> <span class="hljs-string">&quot;2022-06-01&quot;</span> <span class="hljs-operator">&amp;</span> Date <span class="hljs-operator">&lt;</span> <span class="hljs-string">&quot;2022-09-30&quot;</span><span class="hljs-punctuation">)</span>
 
-g8 &lt;- ggplot(df1long_sub3, aes(Date, N_positive)) + geom_line() + 
-            facet_grid(Place~Day, scales = <span class="hljs-string">&quot;free_y&quot;</span>) +
-            labs(title = <span class="hljs-string">&quot;Only Wednesday&quot;</span>)
+g8 <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span>df1long_sub3<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>Date<span class="hljs-punctuation">,</span> N_positive<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> geom_line<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> 
+            facet_grid<span class="hljs-punctuation">(</span>Place<span class="hljs-operator">~</span>Day<span class="hljs-punctuation">,</span> scales <span class="hljs-operator">=</span> <span class="hljs-string">&quot;free_y&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+            labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Only Wednesday&quot;</span><span class="hljs-punctuation">)</span>
 
-plot(g8)
+plot<span class="hljs-punctuation">(</span>g8<span class="hljs-punctuation">)</span>
 </code></pre>
 <p><img src="output_33_0.png" alt="png"></p>
 <h2 id="おさらい"><a name="おさらい" class="plugin-anchor" href="#おさらい"><i class="fa fa-link" aria-hidden="true"></i></a>おさらい</h2>
@@ -859,7 +859,7 @@ plot(g8)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"手順１","level":"1.3.2","depth":2,"next":{"title":"手順２","level":"1.3.3","depth":2,"path":"Training_B/B_01.md","ref":"Training_B/B_01.md","articles":[]},"previous":{"title":"イントロ","level":"1.3.1","depth":2,"path":"Training_B/B_00.md","ref":"Training_B/B_00.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01/B_01.md","mtime":"2023-01-22T03:41:13.298Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-22T07:14:43.165Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"手順１","level":"1.3.2","depth":2,"next":{"title":"手順２","level":"1.3.3","depth":2,"path":"Training_B/B_01.md","ref":"Training_B/B_01.md","articles":[]},"previous":{"title":"イントロ","level":"1.3.1","depth":2,"path":"Training_B/B_00.md","ref":"Training_B/B_00.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01/B_01.md","mtime":"2024-01-19T04:34:23.972Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-01-19T06:13:41.314Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

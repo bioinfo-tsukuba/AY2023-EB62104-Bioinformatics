@@ -6,7 +6,7 @@
         <title>手順２ · タイトル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="generator" content="HonKit 5.1.4">
         
         
         
@@ -343,7 +343,7 @@
     
         <li class="chapter " data-level="2.1" >
             
-                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2438996">
+                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2907352">
             
                     
                     manabaのページ
@@ -402,7 +402,7 @@
                                 <html><head></head><body><h1 id="演習b：手順2"><a name="演習b：手順2" class="plugin-anchor" href="#演習b：手順2"><i class="fa fa-link" aria-hidden="true"></i></a>演習B：手順2</h1>
 <h2 id="1-データのダウンロード"><a name="1-データのダウンロード" class="plugin-anchor" href="#1-データのダウンロード"><i class="fa fa-link" aria-hidden="true"></i></a>1. データのダウンロード</h2>
 <p>Jupyter Hubのターミナルを開き、以下のコマンドを実行してデータをダウンロードしてください。</p>
-<pre><code class="lang-bash">mkdir data
+<pre><code class="lang-bash"><span class="hljs-built_in">mkdir</span> data
 
 <span class="hljs-built_in">cd</span> data
 
@@ -431,7 +431,7 @@ wget https://github.com/bioinfo-tsukuba/20201226-EB62104-bioinformatics-course/r
 </ul>
 <h3 id="tidyverse-を使うには"><a name="tidyverse-を使うには" class="plugin-anchor" href="#tidyverse-を使うには"><i class="fa fa-link" aria-hidden="true"></i></a>tidyverse を使うには</h3>
 <p>そのノートブックの中で一度、以下を実行する必要があります。</p>
-<pre><code class="lang-R">library(tidyverse)
+<pre><code class="lang-R">library<span class="hljs-punctuation">(</span>tidyverse<span class="hljs-punctuation">)</span>
 </code></pre>
 <p>以下のような(感じの）メッセージが出てくると思います（問題ありません）</p>
 <pre><code>── [1mAttaching packages[22m ─────────────────────────────────────── tidyverse 1.3.0 ──
@@ -457,7 +457,7 @@ wget https://github.com/bioinfo-tsukuba/20201226-EB62104-bioinformatics-course/r
 </li>
 </ul>
 <p>以下のコマンドは、 <code>GSE59831_processed_data_FPKM.txt</code> を読み込み、 <code>df1</code> というオブジェクトに格納することを表します。</p>
-<pre><code class="lang-R">df1 &lt;- read_tsv(<span class="hljs-string">&quot;data/GSE59831_processed_data_FPKM.txt&quot;</span>, col_names=<span class="hljs-literal">TRUE</span>)
+<pre><code class="lang-R">df1 <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;data/GSE59831_processed_data_FPKM.txt&quot;</span><span class="hljs-punctuation">,</span> col_names<span class="hljs-operator">=</span><span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h2 id="データテーブル（表）の形を調べるのに便利な関数：-dim-head-str"><a name="データテーブル（表）の形を調べるのに便利な関数：-dim-head-str" class="plugin-anchor" href="#データテーブル（表）の形を調べるのに便利な関数：-dim-head-str"><i class="fa fa-link" aria-hidden="true"></i></a>データテーブル（表）の形を調べるのに便利な関数： <code>dim()</code>, <code>head()</code>, <code>str()</code></h2>
 <ul>
@@ -467,7 +467,7 @@ wget https://github.com/bioinfo-tsukuba/20201226-EB62104-bioinformatics-course/r
 <li><code>nrow()</code>、<code>ncol()</code> はそれぞれ行数、列数を出力します</li>
 </ul>
 <p>以下に実行例を示します。</p>
-<pre><code class="lang-R">head(df1)
+<pre><code class="lang-R">head<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">)</span>
 </code></pre>
 <p>こんな結果が返ってきます：</p>
 <table class="dataframe">
@@ -488,12 +488,12 @@ wget https://github.com/bioinfo-tsukuba/20201226-EB62104-bioinformatics-course/r
 
 
 <p>今度はこれを実行してみましょう：</p>
-<pre><code class="lang-R"><span class="hljs-built_in">dim</span>(df1)
+<pre><code class="lang-R"><span class="hljs-built_in">dim</span><span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">)</span>
 </code></pre>
 <p>こんな結果が返ってきます（行数、列数）：</p>
 <pre><code>16024   29
 </code></pre><p>今度はこれを実行してみましょう：</p>
-<pre><code class="lang-R">str(df1)
+<pre><code class="lang-R">str<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">)</span>
 </code></pre>
 <p>[16,024 × 29] は行数と列数を表します。また、 <code>$</code> で始まる行は、各列にどのような値が格納されているかを表します：</p>
 <pre><code>tibble [16,024 × 29] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
@@ -564,26 +564,26 @@ wget https://github.com/bioinfo-tsukuba/20201226-EB62104-bioinformatics-course/r
 </ul>
 <p>以下に例を示します</p>
 <pre><code class="lang-R"><span class="hljs-comment"># Tum1 列の値が100より大きい行を抽出</span>
-filter(df1, Tum1 &gt; <span class="hljs-number">100</span>)
+filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># Tum1 列の値が100より大きく、WT1 列の値が10より小さい行を抽出</span>
 <span class="hljs-comment"># (&amp; は同時に満たすべき条件を組み合わせる)</span>
-filter(df1, Tum1 &gt; <span class="hljs-number">100</span> &amp; WT1 &lt;<span class="hljs-number">10</span>)
+filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span> <span class="hljs-operator">&amp;</span> WT1 <span class="hljs-operator">&lt;</span><span class="hljs-number">10</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># Tum1 列の値が100より大きいか、Tum2 列の値が100より大きい行を抽出</span>
 <span class="hljs-comment"># (| はいずれか満たすべき条件を組み合わせる)</span>
-filter(df1, Tum1 &gt; <span class="hljs-number">100</span> | Tum2 &gt; <span class="hljs-number">100</span>)
+filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span> <span class="hljs-operator">|</span> Tum2 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># 「Tum1 列の値が100より大きいか、Tum2 列の値が100より大きい」</span>
 <span class="hljs-comment"># かつ「WT1列の値が10より小さいか、WT2列の値が10より小さい」行を抽出</span>
 <span class="hljs-comment"># (カッコで囲むことでひとまとまりとして扱える)</span>
-filter(df1, (Tum1&gt;<span class="hljs-number">100</span> | Tum2&gt;<span class="hljs-number">100</span>) &amp; (WT1&lt;<span class="hljs-number">10</span> | WT2&lt;<span class="hljs-number">10</span>) )
+filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> <span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">&gt;</span><span class="hljs-number">100</span> <span class="hljs-operator">|</span> Tum2<span class="hljs-operator">&gt;</span><span class="hljs-number">100</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">&amp;</span> <span class="hljs-punctuation">(</span>WT1<span class="hljs-operator">&lt;</span><span class="hljs-number">10</span> <span class="hljs-operator">|</span> WT2<span class="hljs-operator">&lt;</span><span class="hljs-number">10</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">)</span>
 </code></pre>
 <p>なお、抽出された結果は、元のデータフレーム自体には保存されないため、別のオブジェクトに格納する必要がある</p>
-<pre><code class="lang-R">df1_sub &lt;- filter(df1, Tum1 &gt; 100)
+<pre><code class="lang-R">df1_sub <span class="hljs-operator">&lt;-</span> filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span>
 
-# 上と同じ意味
-filter(df1, Tum1 &gt; 100) -&gt; df1_sub
+<span class="hljs-comment"># 上と同じ意味</span>
+filter<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> df1_sub
 </code></pre>
 <h3 id="特定の列を抽出する：-select"><a name="特定の列を抽出する：-select" class="plugin-anchor" href="#特定の列を抽出する：-select"><i class="fa fa-link" aria-hidden="true"></i></a>特定の列を抽出する： <code>select()</code></h3>
 <ul>
@@ -594,23 +594,23 @@ filter(df1, Tum1 &gt; 100) -&gt; df1_sub
 </ul>
 <p>以下に例を示す</p>
 <pre><code class="lang-R"><span class="hljs-comment"># mice_gene_symbol 列を抽出する</span>
-select(df1, mice_gene_symbol)
+select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># mice_gene_symbol 列とWT1列を抽出する</span>
-select(df1, mice_gene_symbol, WT1)
+select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># mice_gene_symbol 列を抽出する</span>
-select(df1, mice_gene_symbol, human_gene_symbol, WT1)
+select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">,</span> human_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># mice_gene_symbol 列以外を抽出する</span>
 <span class="hljs-comment"># (-を前につけるとその列を除く)</span>
-select(df1, -mice_gene_symbol)
+select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> <span class="hljs-operator">-</span>mice_gene_symbol<span class="hljs-punctuation">)</span>
 </code></pre>
 <p>なお、抽出された結果は、元のデータフレーム自体には保存されないため、別のオブジェクトに格納する必要がある</p>
-<pre><code class="lang-R">df1_selected &lt;- select(df1, mice_gene_symbol, WT1)
+<pre><code class="lang-R">df1_selected <span class="hljs-operator">&lt;-</span> select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
-# 上と同じ意味
-select(df1, mice_gene_symbol, WT1) -&gt; df1_selected
+<span class="hljs-comment"># 上と同じ意味</span>
+select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> df1_selected
 </code></pre>
 <h3 id="パイプ演算子-"><a name="パイプ演算子-" class="plugin-anchor" href="#パイプ演算子-"><i class="fa fa-link" aria-hidden="true"></i></a>パイプ演算子 <code>%&gt;%</code></h3>
 <ul>
@@ -619,25 +619,25 @@ select(df1, mice_gene_symbol, WT1) -&gt; df1_selected
 </ul>
 <p>以下に例を示す</p>
 <pre><code class="lang-R"><span class="hljs-comment"># str(df1) と同じ</span>
-df1 %&gt;% str
+df1 <span class="hljs-operator">%&gt;%</span> str
 </code></pre>
 <pre><code class="lang-R"><span class="hljs-comment"># select(df1, mice_gene_symbol, WT1) と同じ</span>
-df1 %&gt;% select(mice_gene_symbol, WT1)
+df1 <span class="hljs-operator">%&gt;%</span> select<span class="hljs-punctuation">(</span>mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># %&gt;% の後に改行やインデントが入っても同じ意味</span>
-df1 %&gt;% 
-    select(mice_gene_symbol, WT1)
+df1 <span class="hljs-operator">%&gt;%</span> 
+    select<span class="hljs-punctuation">(</span>mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 </code></pre>
-<pre><code class="lang-R"># select(filter(df1, Tum1&gt;100), WT) と同じ意味
-# (パイプをつなげることもできる)
-df1 %&gt;% 
-    filter(Tum1&gt;100) %&gt;%
-    select(mice_gene_symbol, WT1)
+<pre><code class="lang-R"><span class="hljs-comment"># select(filter(df1, Tum1&gt;100), WT) と同じ意味</span>
+<span class="hljs-comment"># (パイプをつなげることもできる)</span>
+df1 <span class="hljs-operator">%&gt;%</span> 
+    filter<span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">&gt;</span><span class="hljs-number">100</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span>
+    select<span class="hljs-punctuation">(</span>mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
-# 結果を格納することもできる
-df1 %&gt;% 
-    filter(Tum1&gt;100) %&gt;%
-    select(mice_gene_symbol, WT1) -&gt; df1_filtered_selected
+<span class="hljs-comment"># 結果を格納することもできる</span>
+df1 <span class="hljs-operator">%&gt;%</span> 
+    filter<span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">&gt;</span><span class="hljs-number">100</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%&gt;%</span>
+    select<span class="hljs-punctuation">(</span>mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> df1_filtered_selected
 </code></pre>
 <h3 id="列を加える：-mutate"><a name="列を加える：-mutate" class="plugin-anchor" href="#列を加える：-mutate"><i class="fa fa-link" aria-hidden="true"></i></a>列を加える： <code>mutate()</code></h3>
 <ul>
@@ -646,16 +646,16 @@ df1 %&gt;%
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">mutate(df1, Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>)
+<pre><code class="lang-R">mutate<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum123_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">+</span>Tum2<span class="hljs-operator">+</span>Tum3<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">3</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># 上と同じ</span>
-df1 %&gt;% mutate(Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>)
+df1 <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>Tum123_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">+</span>Tum2<span class="hljs-operator">+</span>Tum3<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">3</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <pre><code class="lang-R"><span class="hljs-comment"># 同時に複数も可能</span>
-mutate(df1, Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>, WT12_mean = (WT1+WT2)/<span class="hljs-number">2</span>)
+mutate<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> Tum123_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">+</span>Tum2<span class="hljs-operator">+</span>Tum3<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">3</span><span class="hljs-punctuation">,</span> WT12_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>WT1<span class="hljs-operator">+</span>WT2<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># 上と同じ</span>
-df1 %&gt;% mutate(Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</span>, WT12_mean = (WT1+WT2)/<span class="hljs-number">2</span>)
+df1 <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>Tum123_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>Tum1<span class="hljs-operator">+</span>Tum2<span class="hljs-operator">+</span>Tum3<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">3</span><span class="hljs-punctuation">,</span> WT12_mean <span class="hljs-operator">=</span> <span class="hljs-punctuation">(</span>WT1<span class="hljs-operator">+</span>WT2<span class="hljs-punctuation">)</span><span class="hljs-operator">/</span><span class="hljs-number">2</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h3 id="２つの行を結合する（join）"><a name="２つの行を結合する（join）" class="plugin-anchor" href="#２つの行を結合する（join）"><i class="fa fa-link" aria-hidden="true"></i></a>２つの行を結合する（JOIN）</h3>
 <ul>
@@ -699,18 +699,18 @@ df1 %&gt;% mutate(Tum123_mean = (Tum1+Tum2+Tum3)/<span class="hljs-number">3</sp
 </ul>
 </li>
 </ul>
-<pre><code class="lang-R">df2 &lt;- read_tsv(&quot;data/HOM_MouseHumanSequence.rpt&quot;, col_names=TRUE)
+<pre><code class="lang-R">df2 <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;data/HOM_MouseHumanSequence.rpt&quot;</span><span class="hljs-punctuation">,</span> col_names<span class="hljs-operator">=</span><span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
 
-# (キーの名前が２つの表で違う時は以下のように書くとよい)
-inner_join(df1, df2, by = c(&quot;mice_gene_symbol&quot;=&quot;Symbol&quot;))
+<span class="hljs-comment"># (キーの名前が２つの表で違う時は以下のように書くとよい)</span>
+inner_join<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> df2<span class="hljs-punctuation">,</span> by <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;mice_gene_symbol&quot;</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;Symbol&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 
-# 上と同じ
-df1 %&gt;% 
-    inner_join(df2, by = c(&quot;mice_gene_symbol&quot;=&quot;Symbol&quot;))
+<span class="hljs-comment"># 上と同じ</span>
+df1 <span class="hljs-operator">%&gt;%</span> 
+    inner_join<span class="hljs-punctuation">(</span>df2<span class="hljs-punctuation">,</span> by <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;mice_gene_symbol&quot;</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;Symbol&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 
-# join の結果を新たなオブジェクトに格納する
-df1 %&gt;% 
-    inner_join(df2, by = c(&quot;mice_gene_symbol&quot;=&quot;Symbol&quot;)) -&gt; df1_and_2
+<span class="hljs-comment"># join の結果を新たなオブジェクトに格納する</span>
+df1 <span class="hljs-operator">%&gt;%</span> 
+    inner_join<span class="hljs-punctuation">(</span>df2<span class="hljs-punctuation">,</span> by <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;mice_gene_symbol&quot;</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;Symbol&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> df1_and_2
 </code></pre>
 </body></html>
                                 
@@ -755,7 +755,7 @@ df1 %&gt;%
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"手順２","level":"1.3.3","depth":2,"next":{"title":"手順３","level":"1.3.4","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"previous":{"title":"手順１","level":"1.3.2","depth":2,"path":"Training_B/B_01/B_01.md","ref":"Training_B/B_01/B_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01.md","mtime":"2023-01-22T03:36:24.024Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-22T07:14:43.165Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"手順２","level":"1.3.3","depth":2,"next":{"title":"手順３","level":"1.3.4","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"previous":{"title":"手順１","level":"1.3.2","depth":2,"path":"Training_B/B_01/B_01.md","ref":"Training_B/B_01/B_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_01.md","mtime":"2024-01-19T04:34:23.971Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-01-19T06:13:41.314Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

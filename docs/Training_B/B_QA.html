@@ -6,7 +6,7 @@
         <title>FAQ · タイトル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="generator" content="HonKit 5.1.4">
         
         
         
@@ -343,7 +343,7 @@
     
         <li class="chapter " data-level="2.1" >
             
-                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2438996">
+                <a target="_blank" href="https://manaba.tsukuba.ac.jp/ct/course_2907352">
             
                     
                     manabaのページ
@@ -446,55 +446,55 @@ $ awk <span class="hljs-string">&apos;NR==1 &amp;&amp; /\t/{print}&apos;</span> 
 <li>なので、 <code>!is.na(列名)</code> は ある列の値が欠損値 （NA） <strong>でない</strong> 行ならばTRUE、 NAならばFALSEを返します</li>
 </ul>
 <pre><code class="lang-R"><span class="hljs-comment"># human が NA でないの行だけにする</span>
-fpkm_epi_tumor_human %&lt;&gt;% filter(!<span class="hljs-built_in">is.na</span>(human))
+fpkm_epi_tumor_human <span class="hljs-operator">%&lt;&gt;%</span> filter<span class="hljs-punctuation">(</span><span class="hljs-operator">!</span><span class="hljs-built_in">is.na</span><span class="hljs-punctuation">(</span>human<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># human が NA でないの行だけにする (上と同じ意味)</span>
-fpkm_epi_tumor_human %&lt;&gt;% filter(! <span class="hljs-built_in">is.na</span>(human))
+fpkm_epi_tumor_human <span class="hljs-operator">%&lt;&gt;%</span> filter<span class="hljs-punctuation">(</span><span class="hljs-operator">!</span> <span class="hljs-built_in">is.na</span><span class="hljs-punctuation">(</span>human<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 </code></pre>
 <h3 id="librarymagrittr--の話"><a name="librarymagrittr--の話" class="plugin-anchor" href="#librarymagrittr--の話"><i class="fa fa-link" aria-hidden="true"></i></a><code>library(magrittr)</code>, <code>%&lt;&gt;%</code> の話</h3>
 <ul>
 <li><code>magrittr</code> パッケージが使える</li>
 <li>例えば <code>%&lt;&gt;%</code> が使える。これはパイプの結果を戻して代入すること</li>
 </ul>
-<pre><code class="lang-R">df1_selected &lt;- select(df1, mice_gene_symbol, WT1)
+<pre><code class="lang-R">df1_selected <span class="hljs-operator">&lt;-</span> select<span class="hljs-punctuation">(</span>df1<span class="hljs-punctuation">,</span> mice_gene_symbol<span class="hljs-punctuation">,</span> WT1<span class="hljs-punctuation">)</span>
 
-# 以下の３つは同じ意味
-df1_selected %&lt;&gt;% fitler(WT1 &gt; 100)
+<span class="hljs-comment"># 以下の３つは同じ意味</span>
+df1_selected <span class="hljs-operator">%&lt;&gt;%</span> fitler<span class="hljs-punctuation">(</span>WT1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span>
 
-df1_selected %&lt;&gt;% 
-    fitler(WT1 &gt; 100)
+df1_selected <span class="hljs-operator">%&lt;&gt;%</span> 
+    fitler<span class="hljs-punctuation">(</span>WT1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span>
 
-df1_selected %&gt;%
-    fitler(WT1 &gt; 100) -&gt; df1_selected
+df1_selected <span class="hljs-operator">%&gt;%</span>
+    fitler<span class="hljs-punctuation">(</span>WT1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">100</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">-&gt;</span> df1_selected
 </code></pre>
 <h3 id="バックスラッシュ----の話"><a name="バックスラッシュ----の話" class="plugin-anchor" href="#バックスラッシュ----の話"><i class="fa fa-link" aria-hidden="true"></i></a>バックスラッシュ ( ` ) の話</h3>
 <p>・Rでは文字列を &quot; (ダブルクオート） もしくは &apos; （シングルクオート）で囲みます
 ・一方、tidyverse では列名を &quot; や &apos; で囲まずに、そのまま書きます
 ・ところが、列名に半角スペースやカッコが含まれているとうまくいかない。その場合ににはバッククオート（`）で列名を囲むと「そのままの列名」としてRに解釈してもらえる</p>
 <pre><code class="lang-R"><span class="hljs-comment"># この例では  log2(fold_change)  をバッククオートで囲んでいる</span>
-deg_macrophage %&lt;&gt;% select(gene_id, value_1, value_2, `log2(fold_change)`, p_value, q_value)
+deg_macrophage <span class="hljs-operator">%&lt;&gt;%</span> select<span class="hljs-punctuation">(</span>gene_id<span class="hljs-punctuation">,</span> value_1<span class="hljs-punctuation">,</span> value_2<span class="hljs-punctuation">,</span> `log2(fold_change)`<span class="hljs-punctuation">,</span> p_value<span class="hljs-punctuation">,</span> q_value<span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># 注意：バッククオートを外すとうまくいかなくなる</span>
-deg_macrophage %&lt;&gt;% select(gene_id, value_1, value_2, log2(fold_change), p_value, q_value)
+deg_macrophage <span class="hljs-operator">%&lt;&gt;%</span> select<span class="hljs-punctuation">(</span>gene_id<span class="hljs-punctuation">,</span> value_1<span class="hljs-punctuation">,</span> value_2<span class="hljs-punctuation">,</span> log2<span class="hljs-punctuation">(</span>fold_change<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> p_value<span class="hljs-punctuation">,</span> q_value<span class="hljs-punctuation">)</span>
 </code></pre>
 <h3 id="in-について"><a name="in-について" class="plugin-anchor" href="#in-について"><i class="fa fa-link" aria-hidden="true"></i></a><code>%in%</code> について</h3>
 <ul>
 <li><code>%in%</code> は、あるベクトルの要素が別のベクトルの要素に含まれているかを返す演算子です</li>
 <li><code>a %in% b</code> で、aとbがそれぞれベクトルの時、aの各要素が b に含まれるかどうかを（aの長さの分だけ） TRUEもしくはFALSEで返します</li>
 </ul>
-<pre><code class="lang-R">a &lt;- <span class="hljs-built_in">c</span>(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;W&quot;</span>, <span class="hljs-string">&quot;Z&quot;</span>) 
+<pre><code class="lang-R">a <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;A&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;W&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Z&quot;</span><span class="hljs-punctuation">)</span> 
 
-b &lt;- <span class="hljs-built_in">c</span>(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;Y&quot;</span>, <span class="hljs-string">&quot;Z&quot;</span>)
+b <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;A&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;B&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;C&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;X&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Y&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Z&quot;</span><span class="hljs-punctuation">)</span>
 
 <span class="hljs-comment"># a の &quot;A&quot;, &quot;Z&quot; は b に含まれるが、&quot;W&quot; は含まれないので、</span>
 <span class="hljs-comment"># 順に TRUE FALSE TRUE が出力される</span>
-a %in% b
+a <span class="hljs-operator">%in%</span> b
 </code></pre>
 <pre><code class="lang-R"><span class="hljs-comment"># `From %in% deg_macrophage_tumor_human$human` は</span>
 <span class="hljs-comment"># From の各要素が deg_macrophage_tumor_human$human に含まれるなら TRUE、 </span>
 <span class="hljs-comment"># そうでないなら FALSE を返す</span>
-dflr %&gt;% 
-    mutate(ligand_up_in_tumor_macrophage = From %in% deg_macrophage_tumor_human$human)
+dflr <span class="hljs-operator">%&gt;%</span> 
+    mutate<span class="hljs-punctuation">(</span>ligand_up_in_tumor_macrophage <span class="hljs-operator">=</span> From <span class="hljs-operator">%in%</span> deg_macrophage_tumor_human<span class="hljs-operator">$</span>human<span class="hljs-punctuation">)</span>
 </code></pre>
 <h3 id="rに組み込みの作図関数について"><a name="rに組み込みの作図関数について" class="plugin-anchor" href="#rに組み込みの作図関数について"><i class="fa fa-link" aria-hidden="true"></i></a>Rに組み込みの作図関数について</h3>
 <h4 id="ヒストグラムを描く-hist"><a name="ヒストグラムを描く-hist" class="plugin-anchor" href="#ヒストグラムを描く-hist"><i class="fa fa-link" aria-hidden="true"></i></a>ヒストグラムを描く <code>hist()</code></h4>
@@ -511,9 +511,9 @@ dflr %&gt;%
 <li><code>&amp;</code> でつないだのと同じ意味になります</li>
 <li>以下の２つは同じ意味です</li>
 </ul>
-<pre><code class="lang-R">filter(`log2(fold_change)` &gt; log2(<span class="hljs-number">1.5</span>) &amp; q_value &lt; <span class="hljs-number">0.1</span>)
+<pre><code class="lang-R">filter<span class="hljs-punctuation">(</span>`log2(fold_change)` <span class="hljs-operator">&gt;</span> log2<span class="hljs-punctuation">(</span><span class="hljs-number">1.5</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">&amp;</span> q_value <span class="hljs-operator">&lt;</span> <span class="hljs-number">0.1</span><span class="hljs-punctuation">)</span>
 </code></pre>
-<pre><code class="lang-R">filter(`log2(fold_change)` &gt; log2(<span class="hljs-number">1.5</span>), q_value &lt; <span class="hljs-number">0.1</span>)
+<pre><code class="lang-R">filter<span class="hljs-punctuation">(</span>`log2(fold_change)` <span class="hljs-operator">&gt;</span> log2<span class="hljs-punctuation">(</span><span class="hljs-number">1.5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> q_value <span class="hljs-operator">&lt;</span> <span class="hljs-number">0.1</span><span class="hljs-punctuation">)</span>
 </code></pre>
 </body></html>
                                 
@@ -558,7 +558,7 @@ dflr %&gt;%
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.3.5","depth":2,"next":{"title":"課題","level":"1.3.6","depth":2,"path":"Training_B/B_03.md","ref":"Training_B/B_03.md","articles":[]},"previous":{"title":"手順３","level":"1.3.4","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_QA.md","mtime":"2023-01-21T13:30:07.843Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-22T07:14:43.165Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.3.5","depth":2,"next":{"title":"課題","level":"1.3.6","depth":2,"path":"Training_B/B_03.md","ref":"Training_B/B_03.md","articles":[]},"previous":{"title":"手順３","level":"1.3.4","depth":2,"path":"Training_B/B_02.md","ref":"Training_B/B_02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_B/B_QA.md","mtime":"2024-01-19T04:34:23.974Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-01-19T06:13:41.314Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
