@@ -3,7 +3,7 @@
 <html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>課題 · タイトル</title>
+        <title>課題 · 2023年度 筑波大学 生命環境学群 「バイオインフォマティクス」 EB62104</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 5.1.4">
@@ -406,6 +406,11 @@
 </li>
 <li>Jupyter Hub上のメニューから <code>File &gt; Download</code> とすることで、実行結果をJupyter notebook形式でダウンロードできるので、それを manaba で提出せよ</li>
 </ul>
+<h2 id="発展課題について"><a name="発展課題について" class="plugin-anchor" href="#発展課題について"><i class="fa fa-link" aria-hidden="true"></i></a>発展課題について</h2>
+<blockquote>
+<p><strong>発展課題C-1 と C-2 はどちらか一方だけを提出すればOKです</strong></p>
+<p><strong>発展課題C-1 と C-2 のどちらも提出するとそれぞれについて評価点が加算されます</strong></p>
+</blockquote>
 <h2 id="発展課題c-1"><a name="発展課題c-1" class="plugin-anchor" href="#発展課題c-1"><i class="fa fa-link" aria-hidden="true"></i></a>発展課題C-1</h2>
 <h3 id="発展課題c-1の内容"><a name="発展課題c-1の内容" class="plugin-anchor" href="#発展課題c-1の内容"><i class="fa fa-link" aria-hidden="true"></i></a>発展課題C-1の内容</h3>
 <ul>
@@ -423,6 +428,10 @@
 wget https://www.dropbox.com/s/sw7x30vjb8i1doy/Advanced-C-1.ipynb
 </code></pre>
 <p>次に、 <code>Advanced-C-1.ipynb</code> を Jupyter Hub 上で開き、すでにあるコードを参考にしつつ、書いていく。</p>
+<h3 id="ヒント"><a name="ヒント" class="plugin-anchor" href="#ヒント"><i class="fa fa-link" aria-hidden="true"></i></a>ヒント</h3>
+<ul>
+<li><code>Advanced-C-1.ipynb</code>  の「## 2. planarian_markers.rds を読み込む」で読み込む、<code>planarian_markers.rds</code> は <code>planarian_single_cell.ipynb</code> の # Command-46 で作られます</li>
+</ul>
 <h3 id="発展課題c-1の提出様式の指定"><a name="発展課題c-1の提出様式の指定" class="plugin-anchor" href="#発展課題c-1の提出様式の指定"><i class="fa fa-link" aria-hidden="true"></i></a>発展課題C-1の提出様式の指定</h3>
 <ul>
 <li>様式は以下の通りにする。様式が満たされていない場合は０点とする。<ul>
@@ -444,14 +453,16 @@ wget https://www.dropbox.com/s/sw7x30vjb8i1doy/Advanced-C-1.ipynb
 </li>
 </ul>
 <h2 id="発展課題c-2"><a name="発展課題c-2" class="plugin-anchor" href="#発展課題c-2"><i class="fa fa-link" aria-hidden="true"></i></a>発展課題C-2</h2>
-<blockquote>
-<p>※ これは余力のある人だけチャレンジしてみてください</p>
-</blockquote>
 <ul>
 <li>この論文 <a href="https://doi.org/10.1016/j.bbrc.2020.03.044" target="_blank">https://doi.org/10.1016/j.bbrc.2020.03.044</a> ではヒトの13の組織において ACE2など SARS-COV2 の感染に関連する受容体の発現を調査している。</li>
 <li>Table S1 (Excelファイル) を参考に好きな組織の１細胞RNA-seqデータをダウンロードし、 <a href="planarian_single_cell.ipynb">planarian_single_cell.ipynb</a> を参考に、データ前処理・解析を行い、「ACE2遺伝子の発現量が高い細胞クラスターがあるか」を調べよ<ul>
 <li>Table S1 は、 &quot;Appendix A. Supplementary data&quot; のところで &quot;Download : Download spreadsheet (24KB)&quot; をクリックし、ダウンロードされたExcelファイルの、１つ目のシートに含まれている。</li>
 <li>その細胞クラスタがどんな細胞型だと類推されるかは書かなくても大丈夫です。ACE2遺伝子の発現量が高い細胞があるかを調べよ</li>
+</ul>
+</li>
+<li>この課題の範囲<ul>
+<li>ACE2遺伝子の発現量が高い細胞クラスターがあるかを調べるコードを考えてほしいです。</li>
+<li>その細胞クラスタがどんな細胞型だと類推されるか、は書かなくても大丈夫です。</li>
 </ul>
 </li>
 <li>Jupyter Hub上のメニューから <code>File &gt; Download</code> とすることで、実行結果をJupyter notebook形式でダウンロードできるので、それを manaba で提出せよ</li>
@@ -520,7 +531,7 @@ planarian <- readRDS("planarian_B09.rds")
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"課題","level":"1.4.3","depth":2,"next":{"title":"manabaのページ","level":"2.1","depth":1,"url":"https://manaba.tsukuba.ac.jp/ct/course_2907352","ref":"https://manaba.tsukuba.ac.jp/ct/course_2907352","articles":[]},"previous":{"title":"手順","level":"1.4.2","depth":2,"path":"Training_C/C_01.md","ref":"Training_C/C_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"タイトル","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_C/C_02.md","mtime":"2024-01-19T05:16:53.653Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-01-19T06:24:55.244Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"課題","level":"1.4.3","depth":2,"next":{"title":"manabaのページ","level":"2.1","depth":1,"url":"https://manaba.tsukuba.ac.jp/ct/course_2907352","ref":"https://manaba.tsukuba.ac.jp/ct/course_2907352","articles":[]},"previous":{"title":"手順","level":"1.4.2","depth":2,"path":"Training_C/C_01.md","ref":"Training_C/C_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","advanced-emoji","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","multipart","embed-pdf"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"embed-pdf":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"2023年度 筑波大学 生命環境学群 「バイオインフォマティクス」 EB62104","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"Training_C/C_02.md","mtime":"2024-01-20T02:10:14.000Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-01-20T02:17:27.981Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
